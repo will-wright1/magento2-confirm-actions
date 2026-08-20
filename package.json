@@ -1,0 +1,7 @@
+{
+    "name": "magento2-confirm-actions-tests",
+    "private": true,
+    "scripts": {
+        "test": "node --test dev/tests/js/*.test.js"
+    }
+}

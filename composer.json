@@ -1,0 +1,19 @@
+{
+    "name": "confirm-actions/magento2-confirm-actions",
+    "description": "Adds a confirmation dialog to Magento admin mass-delete actions that do not already define one.",
+    "type": "magento2-module",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4 || ^8.1",
+        "magento/framework": "^103.0",
+        "magento/module-ui": "^101.2"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ConfirmActions\\MassDelete\\": ""
+        }
+    }
+}
