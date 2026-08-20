@@ -1,11 +1,19 @@
 # Magento 2 mass-delete confirmation
 
-This module adds a confirmation dialog to Magento Admin UI mass-delete actions
-that do not already have one. It applies to standard and tree-style mass-action
-menus across the Admin, including the product grid.
+This module adds a second confirmation step to Magento Admin UI mass-delete
+actions. It applies to standard and tree-style mass-action menus across the
+Admin, including the product grid.
 
-Existing confirmations are left unchanged, so the module does not create a
-second dialog for actions already protected by Magento or another extension.
+Magento's existing confirmation remains the first step. After the administrator
+accepts it, the module displays a distinct final warning before the delete
+request can run. If an action does not already have a confirmation, the module
+supplies a default first step so that it still receives two confirmations.
+
+For explicit selections of more than 20 records, the final step requires the
+administrator to type the exact record count, for example `DELETE 25`. Using
+Magento's **Select All** mode always requires the typed confirmation, regardless
+of the number of matching records. The permanent-delete button remains disabled
+until the phrase matches exactly.
 
 ## Requirements
 
@@ -39,6 +47,13 @@ The module protects actions where `delete` appears as a word in the action's
 `type`, `label`, or `url`. Camel-case identifiers such as `massDelete` are
 supported. The default Magento confirmation is used whenever one is already
 present.
+
+The typed-confirmation threshold defaults to 20 and can be overridden for a
+custom action in its `data/config` argument:
+
+```xml
+<item name="typedConfirmationThreshold" xsi:type="number">50</item>
+```
 
 For a custom action whose configuration does not contain the word `delete`, add
 an explicit flag to its mass-action configuration. Custom settings belong in
