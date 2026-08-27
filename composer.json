@@ -1,8 +1,22 @@
 {
     "name": "confirm-actions/magento2-confirm-actions",
-    "description": "Adds a second confirmation step to Magento admin mass-delete actions.",
+    "description": "Magento 2 and Adobe Commerce admin safety module with double and typed confirmation for mass-delete actions.",
     "type": "magento2-module",
     "license": "MIT",
+    "keywords": [
+        "magento",
+        "magento2",
+        "adobe-commerce",
+        "mass-delete",
+        "delete-confirmation",
+        "admin-safety",
+        "bulk-actions"
+    ],
+    "homepage": "https://github.com/will-wright1/magento2-confirm-actions",
+    "support": {
+        "issues": "https://github.com/will-wright1/magento2-confirm-actions/issues",
+        "source": "https://github.com/will-wright1/magento2-confirm-actions"
+    },
     "require": {
         "php": "^7.4 || ^8.1",
         "magento/framework": "^103.0",
