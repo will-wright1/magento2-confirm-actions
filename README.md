@@ -4,6 +4,8 @@
 [![Total Downloads](https://poser.pugx.org/confirm-actions/magento2-confirm-actions/downloads)](https://packagist.org/packages/confirm-actions/magento2-confirm-actions)
 [![License](https://poser.pugx.org/confirm-actions/magento2-confirm-actions/license)](LICENSE)
 
+Built by William James Wright. [Module guide and setup help](https://www.williamjameswright.co.uk/magento-modules/confirm-delete-actions).
+
 Prevent accidental deletion of products and other records in Magento Admin.
 This lightweight Magento 2 and Adobe Commerce module adds a second confirmation
 to mass-delete actions and requires typed confirmation for large deletions.
@@ -35,11 +37,18 @@ action.
 ## Requirements
 
 - Magento Open Source or Adobe Commerce 2.4
-- PHP 7.4 or PHP 8.1–8.4, subject to the Magento version's PHP support
+- PHP 7.4 or PHP 8.1 and later within the PHP 8 series. Use a PHP version
+  supported by your Magento release. Magento 2.4.9 uses PHP 8.5 in Adobe's
+  [system requirements](https://experienceleague.adobe.com/en/docs/commerce-operations/installation-guide/system-requirements).
+
+Versions 1.1.1 and 1.2.0 were tested in the Magento Open Source 2.4.9 Admin
+product grid on PHP 8.5, including double confirmation, typed confirmation for
+large selections, and **Select All**.
 
 ## Installation
 
-Install the package through Composer, then enable it:
+Install the package from Packagist using your existing Magento Composer setup,
+then enable it. This package needs no additional Composer repository.
 
 ```bash
 composer require confirm-actions/magento2-confirm-actions
@@ -48,11 +57,16 @@ bin/magento setup:upgrade
 bin/magento cache:flush
 ```
 
-In production mode, redeploy Admin static content after installation:
+In production mode, include DI compilation and Admin static-content deployment
+in your normal deployment process:
 
 ```bash
+bin/magento setup:di:compile
 bin/magento setup:static-content:deploy -f
 ```
+
+For an existing source-based installation, the module directory is
+`app/code/ConfirmActions/MassDelete`.
 
 ## Updating
 
@@ -62,7 +76,7 @@ bin/magento setup:upgrade
 bin/magento cache:flush
 ```
 
-Redeploy Admin static content after updating a production-mode installation.
+Run the same production deployment steps after an update.
 
 ## What administrators will see
 
@@ -145,6 +159,12 @@ key protections remain responsible for authorising the delete request.
 
 ## Support
 
+For optional release and compatibility updates or setup help,
+[register this module](https://www.williamjameswright.co.uk/magento-modules/confirm-delete-actions#register-module).
+Installation and use do not require registration. Magento's product grid has the
+same link and can prefill the installed module version. The form asks for an
+email address and lets you include a store URL if you want to.
+
 Report bugs or request enhancements through
 [GitHub Issues](https://github.com/will-wright1/magento2-confirm-actions/issues).
 When reporting an Admin UI issue, include the Magento version, browser, action
@@ -160,4 +180,5 @@ npm test
 
 ## License
 
-Released under the [MIT License](LICENSE).
+Released under the [MIT License](LICENSE), which credits the Confirm Actions
+contributors.

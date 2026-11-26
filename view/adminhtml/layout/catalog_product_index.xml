@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- Copyright (c) Confirm Actions contributors. SPDX-License-Identifier: MIT -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block class="ConfirmActions\MassDelete\Block\Adminhtml\Registration"
+                   name="confirm_actions.mass_delete.registration"
+                   before="product_listing"/>
+        </referenceContainer>
+    </body>
+</page>

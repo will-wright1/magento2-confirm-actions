@@ -10,10 +10,20 @@
         "mass-delete",
         "delete-confirmation",
         "admin-safety",
-        "bulk-actions"
+        "bulk-actions",
+        "magento-admin",
+        "magento-open-source",
+        "product-grid"
     ],
-    "homepage": "https://github.com/will-wright1/magento2-confirm-actions",
+    "homepage": "https://www.williamjameswright.co.uk/magento-modules/confirm-delete-actions",
+    "authors": [
+        {
+            "name": "William James Wright",
+            "homepage": "https://www.williamjameswright.co.uk"
+        }
+    ],
     "support": {
+        "docs": "https://www.williamjameswright.co.uk/magento-modules/confirm-delete-actions",
         "issues": "https://github.com/will-wright1/magento2-confirm-actions/issues",
         "source": "https://github.com/will-wright1/magento2-confirm-actions"
     },
